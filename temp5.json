@@ -1,0 +1,60 @@
+{
+    "location": {
+        "latitude": "82.00000",
+        "longitude": "135.00000",
+        "country_name": "",
+        "state_prov": "",
+        "city": "",
+        "locality": "",
+        "elevation": ""
+    },
+    "astronomy": {
+        "date": "2025-12-09",
+        "current_time": "08:28:27.310",
+        "mid_night": "23:52",
+        "night_end": "08:15",
+        "morning": {
+            "astronomical_twilight_begin": "08:15",
+            "astronomical_twilight_end": "-:-",
+            "nautical_twilight_begin": "-:-",
+            "nautical_twilight_end": "-:-",
+            "civil_twilight_begin": "-:-",
+            "civil_twilight_end": "-:-",
+            "blue_hour_begin": "-:-",
+            "blue_hour_end": "-:-",
+            "golden_hour_begin": "-:-",
+            "golden_hour_end": "-:-"
+        },
+        "sunrise": "-:-",
+        "sunset": "-:-",
+        "evening": {
+            "golden_hour_begin": "-:-",
+            "golden_hour_end": "-:-",
+            "blue_hour_begin": "-:-",
+            "blue_hour_end": "-:-",
+            "civil_twilight_begin": "-:-",
+            "civil_twilight_end": "-:-",
+            "nautical_twilight_begin": "-:-",
+            "nautical_twilight_end": "-:-",
+            "astronomical_twilight_begin": "-:-",
+            "astronomical_twilight_end": "15:28"
+        },
+        "night_begin": "15:28",
+        "sun_status": "Always below the twilight angle",
+        "solar_noon": "11:51",
+        "day_length": "-:-",
+        "sun_altitude": -17.64647834254999,
+        "sun_distance": 147366924.6229829,
+        "sun_azimuth": 131.31235327144287,
+        "moon_phase": "WANING_GIBBOUS",
+        "moonrise": "-:-",
+        "moonset": "-:-",
+        "moon_status": "Always above the horizon",
+        "moon_altitude": 22.283966867004466,
+        "moon_distance": 373725.2881902697,
+        "moon_azimuth": 252.68770709649056,
+        "moon_parallactic_angle": 8.111359899888422,
+        "moon_illumination_percentage": "-78.73",
+        "moon_angle": 234.93081496384048
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "location": {
+        "latitude": "65.51000",
+        "longitude": "-165.44000",
+        "country_name": "United States",
+        "state_prov": "Alaska",
+        "city": "Teller",
+        "locality": "",
+        "elevation": "170"
+    },
+    "astronomy": {
+        "date": "2025-12-08",
+        "current_time": "14:21:35.169",
+        "mid_night": "01:53",
+        "night_end": "08:20",
+        "morning": {
+            "astronomical_twilight_begin": "08:20",
+            "astronomical_twilight_end": "09:23",
+            "nautical_twilight_begin": "09:23",
+            "nautical_twilight_end": "10:36",
+            "civil_twilight_begin": "10:36",
+            "civil_twilight_end": "11:53",
+            "blue_hour_begin": "10:09",
+            "blue_hour_end": "11:05",
+            "golden_hour_begin": "11:05",
+            "golden_hour_end": "-:-"
+        },
+        "sunrise": "11:53",
+        "sunset": "15:54",
+        "evening": {
+            "golden_hour_begin": "-:-",
+            "golden_hour_end": "16:42",
+            "blue_hour_begin": "16:42",
+            "blue_hour_end": "17:38",
+            "civil_twilight_begin": "15:54",
+            "civil_twilight_end": "17:11",
+            "nautical_twilight_begin": "17:11",
+            "nautical_twilight_end": "18:24",
+            "astronomical_twilight_begin": "18:24",
+            "astronomical_twilight_end": "19:27"
+        },
+        "night_begin": "19:27",
+        "sun_status": "-",
+        "solar_noon": "13:53",
+        "day_length": "04:00",
+        "sun_altitude": 1.5175071780467952,
+        "sun_distance": 147386694.4452477,
+        "sun_azimuth": 186.3596025769057,
+        "moon_phase": "WANING_GIBBOUS",
+        "moonrise": "20:53",
+        "moonset": "15:21",
+        "moon_status": "-",
+        "moon_altitude": 4.091564177369201,
+        "moon_distance": 373696.0193827526,
+        "moon_azimuth": 311.68273044737896,
+        "moon_parallactic_angle": 19.196765954708308,
+        "moon_illumination_percentage": "-78.77",
+        "moon_angle": 234.86957222840945
+    }
+}

@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Day Length Clock</title>
+        <script src="https://kit.fontawesome.com/777ce06865.js" crossorigin="anonymous"></script>
+    </head>
+    <body style="background-color:#444">
+        <div id="outer" style="margin:50px;padding:20px;border:2px solid #333;border-radius:24px;background-color:#eee">
+            <div id="labels" style="margin-bottom:10px;display:flex">
+                <div id="upper-left" style="height:48px;line-height:48px;font-size:40px;width:50%;text-align:center;border-right:4px solid #333"><i class="fa-solid fa-sun" style="color:#fc0"></i></div>
+                <div id="upper-right" style="height:48px;line-height:48px;font-size:40px;flex-grow:1;text-align:center;"><i class="fa-solid fa-moon" style="color:#66f"></i></div>
+            </div>
+            <div id="progress-border" style="width:100%;border-radius:24px; border:2px solid #555; background-color:#aaa">
+                <div id="progress" style="height:48px;line-height:48px;border-radius:24px;font-size:40px;width:50%;background-color:#555;text-align:center;color:white;font-family:sans-serif"></div>
+            </div>
+        </div>
+
+        <script>
+            const daypercentDisplayElement = document.getElementById("upper-left");
+            const curpercentDisplayElement = document.getElementById("progress");
+
+            latitude = 0;
+            longitude = 0;
+            sunrise = 0;
+            sunset = 0;
+            daylength = 0;
+            daypercent = 0;
+            curpercent = 0;
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    //x.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+
+            function showPosition(position) {
+                latitude = position.coords.latitude
+                longitude = position.coords.longitude
+                loadData();
+            }
+            
+            function loadData() {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                    const obj = JSON.parse(this.responseText);
+                    sunrise = new Date(obj.results.date + " " + obj.results.sunrise);
+                    sunset = new Date(obj.results.date + " " + obj.results.sunset);
+                    daylength = (sunset-sunrise)/(60*60*1000);
+                    daypercent = daylength/24;
+                    curpercent = (Math.abs(new Date() - sunrise))/(24*60*60*1000);
+
+                    daypercentDisplayElement.style.width=daypercent*100+"%";
+                    curpercentDisplayElement.style.width=curpercent*100+"%";
+                    curpercentDisplayElement.innerText=Math.round(curpercent*100)+"%";
+
+                };
+                xhttp.open("GET", "https://api.sunrisesunset.io/json?lat="+latitude+"&lng="+longitude+"&time_format=24");
+                xhttp.send();
+            }
+
+            getLocation();
+            setInterval(getLocation,(1000*60*5));
+        </script>
+    </body>
+</html>
+

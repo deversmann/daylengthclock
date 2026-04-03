@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<title>Day Clock</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link id="css-theme" rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<style>
+    .tooltip {position:absolute;bottom:18px;white-space:nowrap}
+    .shadow {text-shadow:1px 1px 2px #444}
+</style>
+<script src="https://kit.fontawesome.com/777ce06865.js" crossorigin="anonymous"></script>
+
+<body class="w3-dark-gray">
+    <div id="alert" class="w3-panel w3-red w3-hide">
+        <h3>No Workie</h3>
+        <p>Attention, this page requires geolocation to function.</p>
+    </div>
+      
+    <div class="w3-container w3-card-4 w3-theme w3-margin w3-round-large w3-padding">
+        <div class="w3-row w3-section">
+            <div id="daytime" class="w3-col w3-center w3-tooltip" style="width:40%"><i class="w3-xxlarge w3-text-amber fa-solid fa-sun shadow"></i><span class="w3-text w3-tag w3-theme w3-animate-opacity tooltip">Daytime elapsed: <span id="day-elapsed">100</span>%</span></div>
+            <div class="w3-col w3-center w3-xlarge" style="width:0px">|</div>
+            <div class="w3-rest w3-center w3-tooltip"><i class="w3-xxlarge w3-text-light-blue fa-solid fa-moon shadow"></i><span class="w3-text w3-tag w3-theme w3-animate-opacity tooltip">Nighttime elapsed: <span id="night-elapsed">0</span>%</span></div>
+        </div>
+
+        <div class="w3-row w3-section">
+            <div class="w3-col w3-theme-l3 w3-round-xxlarge">
+                <div id="day-bar" class="w3-theme-d5 w3-round-xxlarge w3-padding w3-xlarge w3-center" style="width:40%">40%</div>
+            </div>
+        </div>
+<!-- 
+        <p class="w3-center">
+            <button class="w3-btn w3-section w3-ripple w3-border w3-round-large" onclick="randomizeTheme()"> Colorize </button>
+        </p>
+         -->
+    </div>
+
+    <pre id="debug">
+    </pre>
+
+    <script>
+        var latitude = 0;
+        var longitude = 0;
+
+        var daytimeElapsed = 0;
+        var nighttimeElapsed = 0;
+        var dayElapsed = 0;
+        var dayPct = 50;
+
+        var url = "";
+
+        function setPosition(position) {
+            console.log("in set position: " + position.coords);
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+            console.log("latitude: " + latitude);
+            console.log("latitude: " + longitude);
+
+            loadData();
+            setInterval(loadData,(1000*60*5));
+        }
+
+        function loadData() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                const obj = JSON.parse(this.responseText);
+                sunrise = new Date(obj.results.date + " " + obj.results.sunrise);
+                sunset = new Date(obj.results.date + " " + obj.results.sunset);
+                sunriseNext = new Date(sunrise.getTime() + 24*60*60*1000);
+
+                now = new Date();
+                //now = new Date((new Date()).getTime()+ (12*60*60*1000)); // debug to jump 12 hours forward in a day
+
+                dayPct = Math.round((sunset - sunrise)/(24*60*60*1000) * 100);
+                dayElapsed = Math.round((now - sunrise)/(24*60*60*1000) * 100);
+                if (now < sunset) {
+                    nighttimeElapsed = 0;
+                    daytimeElapsed = Math.round((now-sunrise)/(sunset - sunrise) * 100);
+                }
+                else {
+                    daytimeElapsed = 100;
+                    nighttimeElapsed = Math.round((now - sunset)/(sunriseNext - sunset) * 100);
+                }
+
+                document.getElementById("daytime").style.width = dayPct + "%";
+                document.getElementById("day-elapsed").innerText = daytimeElapsed;
+                document.getElementById("night-elapsed").innerText = nighttimeElapsed;
+    
+                document.getElementById("day-bar").style.width = dayElapsed + "%";
+                document.getElementById("day-bar").innerText = dayElapsed + "%";
+
+                document.getElementById("debug").innerText = "sunrise: " + sunrise + "\nsunset: " + sunset + "\nsunriseNext: " + sunriseNext + "\nurl = " + url;
+            };
+            url = "https://api.sunrisesunset.io/json?lat="+latitude+"&lng="+longitude+"&time_format=24&date="+ new Date().toLocaleDateString();
+
+            xhttp.open("GET", url);
+            xhttp.send();
+        }
+
+        function randomizeTheme() {
+            var themes = ["w3-theme-red", "w3-theme-pink", "w3-theme-purple", "w3-theme-deep-purple", "w3-theme-indigo", "w3-theme-blue", "w3-theme-light-blue", "w3-theme-cyan", "w3-theme-teal", "w3-theme-green", "w3-theme-light-green", "w3-theme-lime", "w3-theme-khaki", "w3-theme-yellow", "w3-theme-amber", "w3-theme-orange", "w3-theme-deep-orange", "w3-theme-blue-grey", "w3-theme-brown", "w3-theme-grey", "w3-theme-dark-grey", "w3-theme-black"];
+            document.getElementById("css-theme").setAttribute("href", "https://www.w3schools.com/lib/" + themes[Math.floor(Math.random() * themes.length)] + ".css");
+        }
+
+        function positionError (error) {
+            document.getElementById("alert").classList.remove("w3-hide");
+        }
+
+        if (navigator.geolocation) {
+            console.log("geo location exists");
+            navigator.geolocation.getCurrentPosition(setPosition, positionError);
+            console.log("got current position");
+        } else {
+            document.getElementById("alert").classList.remove("w3-hide");
+        }
+
+    </script>
+</body>
+
+</html>
+
+
+
+

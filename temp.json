@@ -1,0 +1,60 @@
+{
+    "location": {
+        "latitude": "40.76473",
+        "longitude": "-74.00084",
+        "country_name": "United States",
+        "state_prov": "New York",
+        "city": "New York",
+        "locality": "Midtown West",
+        "elevation": "9"
+    },
+    "astronomy": {
+        "date": "2025-12-08",
+        "current_time": "18:08:03.477",
+        "mid_night": "23:48",
+        "night_end": "05:29",
+        "morning": {
+            "astronomical_twilight_begin": "05:29",
+            "astronomical_twilight_end": "06:02",
+            "nautical_twilight_begin": "06:02",
+            "nautical_twilight_end": "06:37",
+            "civil_twilight_begin": "06:37",
+            "civil_twilight_end": "07:07",
+            "blue_hour_begin": "06:25",
+            "blue_hour_end": "06:48",
+            "golden_hour_begin": "06:48",
+            "golden_hour_end": "07:51"
+        },
+        "sunrise": "07:07",
+        "sunset": "16:29",
+        "evening": {
+            "golden_hour_begin": "15:45",
+            "golden_hour_end": "16:47",
+            "blue_hour_begin": "16:47",
+            "blue_hour_end": "17:10",
+            "civil_twilight_begin": "16:29",
+            "civil_twilight_end": "16:59",
+            "nautical_twilight_begin": "16:59",
+            "nautical_twilight_end": "17:33",
+            "astronomical_twilight_begin": "17:33",
+            "astronomical_twilight_end": "18:06"
+        },
+        "night_begin": "18:06",
+        "sun_status": "-",
+        "solar_noon": "11:48",
+        "day_length": "09:21",
+        "sun_altitude": -18.27024268472856,
+        "sun_distance": 147386694.4452477,
+        "sun_azimuth": 255.25742287257447,
+        "moon_phase": "WANING_GIBBOUS",
+        "moonrise": "20:40",
+        "moonset": "10:46",
+        "moon_status": "-",
+        "moon_altitude": -20.933150197640867,
+        "moon_distance": 373638.40685147996,
+        "moon_azimuth": 36.186220181035765,
+        "moon_parallactic_angle": -28.36448798142342,
+        "moon_illumination_percentage": "-78.86",
+        "moon_angle": 234.74892328226446
+    }
+}

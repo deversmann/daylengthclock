@@ -1,0 +1,60 @@
+{
+    "location": {
+        "latitude": "-82.00000",
+        "longitude": "135.00000",
+        "country_name": "Antarctica",
+        "state_prov": "",
+        "city": "",
+        "locality": "",
+        "elevation": ""
+    },
+    "astronomy": {
+        "date": "2025-12-09",
+        "current_time": "07:25:07.162",
+        "mid_night": "22:52",
+        "night_end": "-:-",
+        "morning": {
+            "astronomical_twilight_begin": "-:-",
+            "astronomical_twilight_end": "-:-",
+            "nautical_twilight_begin": "-:-",
+            "nautical_twilight_end": "-:-",
+            "civil_twilight_begin": "-:-",
+            "civil_twilight_end": "-:-",
+            "blue_hour_begin": "-:-",
+            "blue_hour_end": "-:-",
+            "golden_hour_begin": "-:-",
+            "golden_hour_end": "-:-"
+        },
+        "sunrise": "-:-",
+        "sunset": "-:-",
+        "evening": {
+            "golden_hour_begin": "-:-",
+            "golden_hour_end": "-:-",
+            "blue_hour_begin": "-:-",
+            "blue_hour_end": "-:-",
+            "civil_twilight_begin": "-:-",
+            "civil_twilight_end": "-:-",
+            "nautical_twilight_begin": "-:-",
+            "nautical_twilight_end": "-:-",
+            "astronomical_twilight_begin": "-:-",
+            "astronomical_twilight_end": "-:-"
+        },
+        "night_begin": "-:-",
+        "sun_status": "Always above the twilight angle",
+        "solar_noon": "10:52",
+        "day_length": "-:-",
+        "sun_altitude": 27.60295082816162,
+        "sun_distance": 147366924.6229829,
+        "sun_azimuth": 54.80186032143325,
+        "moon_phase": "WANING_GIBBOUS",
+        "moonrise": "-:-",
+        "moonset": "-:-",
+        "moon_status": "Always below the horizon",
+        "moon_altitude": -16.643788543372647,
+        "moon_distance": 373711.07306385954,
+        "moon_azimuth": 293.45538477660364,
+        "moon_parallactic_angle": 172.2072314422142,
+        "moon_illumination_percentage": "-78.75",
+        "moon_angle": 234.90107512463632
+    }
+}
